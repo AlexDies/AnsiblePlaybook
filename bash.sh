@@ -15,3 +15,4 @@ docker stop centos7
 docker rm centos7
 echo 'rm centos7'
 echo 'end'
+
