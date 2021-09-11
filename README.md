@@ -37,3 +37,15 @@
       vars:
       - name: ansible_user
       - name: ansible_ssh_user
+
+**Доработка ДЗ:**
+
+13. Как называется модуль подключения к host на windows?
+
+Насколько я понял, используется модуль WinRM (Run tasks over Microsoft's WinRM)
+
+17. Какой параметр из модуля подключения `ssh` необходим для того, чтобы определить пользователя, под которым необходимо совершать подключение?
+
+Параметр **remote_user** 
+
+(User name with which to login to the remote server, normally set by the remote_user keyword. If no user is supplied, Ansible will let the ssh client binary choose the user as it normally [Default: (null)])
