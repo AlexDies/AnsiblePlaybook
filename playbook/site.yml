@@ -3,6 +3,10 @@
   hosts: elasticsearch
   roles:
     - elastic
+- name: Install kibana
+  hosts: kibana
+  roles:
+    - kibana
   # handlers:
   #   - name: restart Elasticsearch
   #     become: true
