@@ -70,7 +70,17 @@ https://github.com/AlexDies/filebeat-role
 
 **9 . Добавлено описание в README.md к каждой роли.**
 
-**10,11,12 Переработа playbook с использованием ролей:**
+**10 . Добавление ролей в playbook:**
+
+    root@DESKTOP-92FN9PG:/mnt/c/Users/AlexD/Documents/VSCodeProject/AnsiblePlaybook/AnsiblePlaybook/playbook# ansible-galaxy install -r requirements.yml -p roles 
+    - extracting elastic to /mnt/c/Users/AlexD/Documents/VSCodeProject/AnsiblePlaybook/AnsiblePlaybook/playbook/roles/elastic
+    - elastic (2.0.0) was installed successfully
+    - extracting kibana to /mnt/c/Users/AlexD/Documents/VSCodeProject/AnsiblePlaybook/AnsiblePlaybook/playbook/roles/kibana
+    - kibana (1.1.1) was installed successfully
+    - extracting filebeat to /mnt/c/Users/AlexD/Documents/VSCodeProject/AnsiblePlaybook/AnsiblePlaybook/playbook/roles/filebeat
+    - filebeat (1.0.1) was installed successfully
+
+**11,12 Переработа playbook с использованием ролей:**
 
     ---
     - name: Install Elasticsearch
@@ -85,3 +95,18 @@ https://github.com/AlexDies/filebeat-role
       hosts: app
       roles:
         - filebeat
+
+**Запуск playbook:**
+
+    PLAY RECAP ************************************************************************************
+    application-instance       : ok=10   changed=5    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+    el-instance                : ok=8    changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+    k-instance                 : ok=8    changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+**Проверка на идемпотентность:**
+
+    PLAY RECAP ************************************************************************************************************************************application-instance       : ok=9    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+    el-instance                : ok=7    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+    k-instance                 : ok=7    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+**Плейбук идемпотентен**
