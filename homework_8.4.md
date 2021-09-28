@@ -41,3 +41,47 @@ ___
 4. Выложите `logstash-role` в репозиторий. В ответ приведите ссылку.
 ___
 **Выполнение ДЗ:**
+
+**1,2. Создание файла `requirements.yml`:**
+
+Добавлено 3 роли:
+
+    ---
+      - src: git@github.com:netology-code/mnt-homeworks-ansible.git
+        scm: git
+        version: "2.0.0"
+        name: elastic
+      - src: git@github.com:AlexDies/kibana-role.git
+        scm: git
+        version: "1.1.1"
+        name: kibana
+      - src: git@github.com:AlexDies/filebeat-role.git
+        scm: git
+        version: "1.0.1"
+        name: filebeat
+
+**3,4,5. Создана роль `Kibana` в репозитории:**
+
+https://github.com/AlexDies/kibana-role
+
+**6,7,8. Создана роль `Filebeat` в репозитории:**
+
+https://github.com/AlexDies/filebeat-role
+
+**9 . Добавлено описание в README.md к каждой роли.**
+
+**10,11,12 Переработа playbook с использованием ролей:**
+
+    ---
+    - name: Install Elasticsearch
+      hosts: elasticsearch
+      roles:
+        - elastic
+    - name: Install kibana
+      hosts: kibana
+      roles:
+        - kibana
+    - name: Install Filebeat
+      hosts: app
+      roles:
+        - filebeat
