@@ -7,6 +7,10 @@
   hosts: kibana
   roles:
     - kibana
+- name: Install Filebeat
+  hosts: app
+  roles:
+    - filebeat
   # handlers:
   #   - name: restart Elasticsearch
   #     become: true
