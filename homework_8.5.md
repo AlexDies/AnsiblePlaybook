@@ -45,6 +45,7 @@ ___
 ___
 **Выполнение ДЗ:**
 (https://github.com/AlexDies/filebeat-role/tree/2.0.0
+
 https://github.com/AlexDies/kibana-role/tree/2.0.0)
 
 **0. Добавть драйвер docker для Molecule:**
