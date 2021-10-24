@@ -44,6 +44,7 @@ ___
 6. Выложите свои `roles` в репозитории. В ответ приведите ссылки.
 ___
 **Выполнение ДЗ:**
+
 (https://github.com/AlexDies/filebeat-role/tree/2.0.0
 
 https://github.com/AlexDies/kibana-role/tree/2.0.0)
