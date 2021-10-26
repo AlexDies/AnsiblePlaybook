@@ -1,5 +1,0 @@
----
-elasticsearch_version: "7.15.0"
-filebeat_version: "{{ elasticsearch_version }}"
-elk_stack_version: "{{ elasticsearch_version }}"
-kibana_version: "{{ elasticsearch_version }}"
